@@ -1,0 +1,23 @@
+{% extends 'predictor/base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card p-4">
+      <h2 class="text-center text-info mb-4"><i class="bi bi-graph-up"></i> Predict Your CET Rank</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="cet_marks" class="form-label">CET PCM Marks</label>
+          <input type="number" class="form-control" id="cet_marks" name="cet_marks" required>
+        </div>
+        <div class="mb-3">
+          <label for="puc_marks" class="form-label">PUC PCM Marks</label>
+          <input type="number" class="form-control" id="puc_marks" name="puc_marks" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">🔍 Predict</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
